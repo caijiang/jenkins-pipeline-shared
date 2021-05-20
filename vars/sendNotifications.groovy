@@ -15,10 +15,10 @@ def call(String buildStatus = 'STARTED') {
     // Default values
 //    def color = 'RED'
 //    def colorCode = '#FF0000'
-    String subject = '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
+    GString subject = "${env.PROJECT_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!"
 //    def summary = "${subject} (${env.BUILD_URL})"
-    GString details = """<summary>$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:</summary>
-<p>Check console output at $BUILD_URL to view the results.</p>
+    GString details = """<summary>${env.PROJECT_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}:</summary>
+<p>Check console output at ${env.BUILD_URL} to view the results.</p>
 <p>Check console output at $url to view the results.</p>"""
 
     // Override default values based on build status
