@@ -1,0 +1,5 @@
+<strong>sendNotifications(buildStatus='STARTED')</strong>
+
+<p>
+    发送构建结果的邮件通知。
+</p>
