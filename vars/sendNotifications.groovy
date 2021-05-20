@@ -29,8 +29,8 @@ def call(String buildStatus = 'STARTED') {
 //    def color = 'RED'
 //    def colorCode = '#FF0000'
 //    env.BUILD_STATUS
-    GString subject = "${env.JOB_BASE_NAME} - 构建状态 #${env.BUILD_NUMBER} - $buildStatus!"
-    GString details = """<summary>${env.JOB_BASE_NAME} - 构建状态 #${env.BUILD_NUMBER} - ${buildStatus}:</summary>
+    GString subject = "${env.JOB_NAME} - 构建状态 #${env.BUILD_NUMBER} - $buildStatus!"
+    GString details = """<summary>${env.JOB_NAME} - 构建状态 #${env.BUILD_NUMBER} - ${buildStatus}:</summary>
 $uls
 <p>点击<a href="$url">详情</a>查看包括单元测试结果在内的更多构建内容。</p>"""
 
