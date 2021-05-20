@@ -3,13 +3,14 @@
 /**
  * Send notifications based on build status string
  */
-def call(Job project,String buildStatus = 'STARTED') {
+def call(String buildStatus = 'STARTED') {
     // build status of null means successful
     buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
-    def blueOceanDisplayUrlProvider = org.jenkinsci.plugins.displayurlapi.DisplayURLProvider.all().find { it.displayName == "Blue Ocean" }
-
-    String url = blueOceanDisplayUrlProvider?.getJobURL(project) ?: env.BUILD_URL
+//    def blueOceanDisplayUrlProvider = org.jenkinsci.plugins.displayurlapi.DisplayURLProvider.all().find { it.displayName == "Blue Ocean" }
+//
+//    String url = blueOceanDisplayUrlProvider?.getJobURL(project) ?: env.BUILD_URL
+    String url = (env.BUILD_URL).replaceFirst("/job","/blue/organizations/jenkins").replaceFirst("/job","/detail")
 
     // Default values
 //    def color = 'RED'
